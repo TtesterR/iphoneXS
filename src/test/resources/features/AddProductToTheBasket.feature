@@ -9,5 +9,5 @@ Feature: Add iphoneXS to the basket
     And the user choose product iphoneXS with Grey color
     And the user changes the color of the phone to Space gray
     And The user adds the phone to the basket
-    Then  they should see product "Мобильный телефон Apple iPhone Xs 256GB Space Gray (MT9H2)" to the basket
+    Then  they should see product "Apple iPhone Xs 256GB Space Gray (MT9H2)" to the basket
 

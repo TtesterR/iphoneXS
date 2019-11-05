@@ -34,7 +34,7 @@ public class RunPage extends PageObject {
 
     public boolean click_space_gray() {
         try {
-            $("//a[@href='https://rozetka.com.ua/139623059/p139623059/']").click();
+            $("//a[@href='https://rozetka.com.ua/116040973/p116040973/']").click();
         } catch (NoSuchElementException e) {
             return false;
         }
