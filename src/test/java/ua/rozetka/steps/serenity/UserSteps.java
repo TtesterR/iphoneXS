@@ -1,3 +1,4 @@
+/*
 package ua.rozetka.steps.serenity;
 
 import net.thucydides.core.annotations.Step;
@@ -9,47 +10,42 @@ public class UserSteps {
 
     protected RunPage runPage;
 
-    @Step
-    public void is_the_home_page(){
+    */
+/*@Step
+    public void isTheHomePage() {
         runPage.open();
+    }*//*
+
+
+    @Step
+    public void looksFor(String keyword) {
+        runPage.enterKeywords(keyword);
     }
 
     @Step
-    public void looks_for (String keyword) {
-        runPage.enter_keywords(keyword);
+    public void clickOnName() {
+        runPage.clickOnName();
     }
 
     @Step
-    public void click_name(){
-        runPage.click_name();
+    public void clickOnGray() {
+        runPage.clickOnGray();
     }
 
     @Step
-    public void click_gray(){
-        boolean e = runPage.click_gray();
+    public void clickOnSpaceGray() {
+        runPage.clickOnSpaceGray();
     }
 
     @Step
-    public void click_space_gray(){
-        boolean e = runPage.click_space_gray();
+    public void clickOnBasket() {
+        runPage.clickOnBasket();
     }
 
     @Step
-    public void click_basket(){
-        runPage.click_basket();
-    }
-
-    @Step
-    public void add_to_basket(String button){
-        assertThat(runPage.getDefinitions(), hasItem(containsString(button)));
+    public void addToBasket(String button) {
+        assertThat(runPage.getСonfirmation(), hasItem(containsString(button)));
 
     }
-    /*@Step
-    public void looks_for(String term){
-        word(term);
-        click_name();
-        click_gray();
-        click_space_gray();
-        click_basket();
-    }*/
 }
+*/
