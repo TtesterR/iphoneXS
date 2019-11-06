@@ -1,19 +1,16 @@
 package ua.rozetka.pages;
 
 import net.serenitybdd.core.pages.WebElementFacade;
-import net.serenitybdd.core.annotations.findby.FindBy;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
+import ua.rozetka.ILocators;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class RunPage extends PageObject {
 
-    final int waitTime = 5000;
-
-    @FindBy(name = "search")
-    protected WebElementFacade searchTerms;
+    int waitTime = 3000;
 
     @Step
     public void isTheHomePage(){
@@ -22,30 +19,29 @@ public class RunPage extends PageObject {
 
     @Step
     public void enterKeywords(String keyword) {
-        searchTerms.type(keyword);
+        $(ILocators.SEARCH_FIELD).type(keyword);
     }
 
     @Step
     public void clickOnName() {
-        $("//span[contains(text(),'xs')]").click();
+        $(ILocators.SEARCH_CLICK).click();
     }
 
-    @Step
+    /*@Step
     public void clickOnGray() {
-        waitABit(waitTime);
             $("//a[@href='https://rozetka.com.ua/66962847/p66962847/']").click();
-    }
+    }*/
 
     @Step
     public void clickOnSpaceGray() {
         waitABit(waitTime);
-            $("//a[@href='https://rozetka.com.ua/139623059/p139623059/']").click();
+        $(ILocators.CLICK_ON_SPACE_GRAY).click();
     }
 
     @Step
     public void clickOnBasket() {
         waitABit(waitTime);
-        $("//span[@class='btn-link btn-link-green detail-buy-btn']").click();
+        $(ILocators.CLICK_ON_BASKET).click();
     }
 
     @Step

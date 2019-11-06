@@ -28,10 +28,10 @@ public class AddSteps {
                 iphone.clickOnName();
         }
 
-        @And("^the user choose product iphoneXS with Grey color$")
+        /*@And("^the user choose product iphoneXS with Grey color$")
             public void theUserChooseProductIphoneXSWithGreyColor() {
                 iphone.clickOnGray();
-        }
+        }*/
 
         @And("^the user changes the color of the phone to Space gray$")
             public void theUserChangesTheColorOfThePhoneToSpaceGray() {
