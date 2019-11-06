@@ -8,7 +8,7 @@ import ua.rozetka.ILocators;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RunPage extends PageObject {
+public class LogicAdd extends PageObject {
 
     int waitTime = 3000;
 
