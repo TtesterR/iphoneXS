@@ -5,9 +5,9 @@ import net.thucydides.core.pages.PageObject;
 import org.junit.Assert;
 import ua.rozetka.ILocators;
 
-public class LogicAdd extends PageObject {
+public class AddPhoneToBasket extends PageObject {
 
-    int waitTime = 3000;
+    int waitTime = 10000;
 
     @Step ("the user is on the Rozetka home page")
     public void isTheHomePage(){
@@ -26,13 +26,13 @@ public class LogicAdd extends PageObject {
 
     @Step ("^the user changes the color of the phone to Space gray$")
     public void clickOnSpaceGray() {
-        waitABit(waitTime);
+        waitFor(waitTime);
         $(ILocators.CLICK_ON_SPACE_GRAY).click();
     }
 
     @Step ("^The user adds the phone to the basket$")
     public void clickOnBasket() {
-        waitABit(waitTime);
+        waitFor(waitTime);
         $(ILocators.CLICK_ON_BASKET).click();
     }
 

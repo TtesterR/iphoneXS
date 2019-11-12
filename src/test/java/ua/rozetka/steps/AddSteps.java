@@ -5,14 +5,13 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
-import ua.rozetka.pages.LogicAdd;
-
+import ua.rozetka.pages.AddPhoneToBasket;
 
 
 public class AddSteps {
 
     @Steps
-    LogicAdd iphone;
+    AddPhoneToBasket iphone;
 
         @Given("the user is on the Rozetka home page")
             public void givenTheUserIsOnTheRozetkaHomePage(){
@@ -42,6 +41,5 @@ public class AddSteps {
         @Then("they should see product to the basket$")
             public void thenTheyShouldSeeProduct() {
             iphone.addToBasket();
-
         }
 }
