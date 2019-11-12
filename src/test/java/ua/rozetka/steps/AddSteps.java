@@ -8,6 +8,7 @@ import net.thucydides.core.annotations.Steps;
 import ua.rozetka.pages.LogicAdd;
 
 
+
 public class AddSteps {
 
     @Steps
@@ -23,15 +24,10 @@ public class AddSteps {
                 iphone.enterKeywords(word);
         }
 
-        @And("^the user choose product \"([^\"]*)\"$")
-            public void theUserChooseProduct(String arg0) {
-                iphone.clickOnName();
+        @And("^the user click on the button search$")
+            public void theUserChooseProduct() {
+                iphone.clickOnButton();
         }
-
-        /*@And("^the user choose product iphoneXS with Grey color$")
-            public void theUserChooseProductIphoneXSWithGreyColor() {
-                iphone.clickOnGray();
-        }*/
 
         @And("^the user changes the color of the phone to Space gray$")
             public void theUserChangesTheColorOfThePhoneToSpaceGray() {
@@ -43,8 +39,9 @@ public class AddSteps {
                 iphone.clickOnBasket();
         }
 
-        @Then("they should see product \"([^\"]*)\" to the basket$")
-            public void thenTheyShouldSeeProduct (String definition){
-                iphone.addToBasket(definition);
+        @Then("they should see product to the basket$")
+            public void thenTheyShouldSeeProduct() {
+            iphone.addToBasket();
+
         }
 }

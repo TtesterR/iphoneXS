@@ -1,54 +1,45 @@
 package ua.rozetka.pages;
 
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.PageObject;
-import org.openqa.selenium.By;
+import org.junit.Assert;
 import ua.rozetka.ILocators;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class LogicAdd extends PageObject {
 
     int waitTime = 3000;
 
-    @Step
+    @Step ("the user is on the Rozetka home page")
     public void isTheHomePage(){
        getDriver().get("https://rozetka.com.ua/");
     }
 
-    @Step
+    @Step ("the user looks up product \"([^\"]*)\"$")
     public void enterKeywords(String keyword) {
         $(ILocators.SEARCH_FIELD).type(keyword);
     }
 
-    @Step
-    public void clickOnName() {
+    @Step ("^the user choose product \"([^\"]*)\"$")
+    public void clickOnButton() {
         $(ILocators.SEARCH_CLICK).click();
     }
 
-    /*@Step
-    public void clickOnGray() {
-            $("//a[@href='https://rozetka.com.ua/66962847/p66962847/']").click();
-    }*/
-
-    @Step
+    @Step ("^the user changes the color of the phone to Space gray$")
     public void clickOnSpaceGray() {
         waitABit(waitTime);
         $(ILocators.CLICK_ON_SPACE_GRAY).click();
     }
 
-    @Step
+    @Step ("^The user adds the phone to the basket$")
     public void clickOnBasket() {
         waitABit(waitTime);
         $(ILocators.CLICK_ON_BASKET).click();
     }
 
-    @Step
-    public List<String> addToBasket(String definition) {
-        WebElementFacade definitionList = find(By.xpath("//div[@class='cart-content popup-content ng-star-inserted']"));
-        return definitionList.findElements(By.xpath("//a[@class='purchase-title novisited']")).stream()
-                .map(element -> element.getText() )
-                .collect(Collectors.toList());
+    @Step ("they should see product to the basket$")
+    public void addToBasket() {
+        String nameWindow = $("//h2[@class='cart-header ng-star-inserted']").getText();
+        Assert.assertEquals(nameWindow, "Вы добавили товар в корзину");
+
     }
 }
