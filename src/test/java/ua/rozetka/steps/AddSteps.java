@@ -5,13 +5,18 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import ua.rozetka.pages.AddPhoneToBasket;
-
+import ua.rozetka.pages.CheckCategories;
+import java.util.List;
 
 public class AddSteps {
 
     @Steps
     AddPhoneToBasket iphone;
+    @Steps
+    CheckCategories checkCategories;
 
         @Given("the user is on the Rozetka home page")
             public void givenTheUserIsOnTheRozetkaHomePage(){
@@ -40,6 +45,21 @@ public class AddSteps {
 
         @Then("they should see product to the basket$")
             public void thenTheyShouldSeeProduct() {
-            iphone.addToBasket();
+                iphone.addToBasket();
+        }
+
+        @Then("^logo in header is displayed$")
+            public void logoInHeaderIsDisplayed() {
+                Assert.assertTrue("False", checkCategories.logoIsDisplayed());
+        }
+
+        @When("^the user click on the \"([^\"]*)\"$")
+            public void theUserClickOnThe(String arg0) {
+                checkCategories.clickOnCategories();
+        }
+
+        @Then("^user should see ad categories$")
+        public void userShouldSeeAdCategories(List<String> getExpectedCategories) {
+                checkCategories.categoriesCheck((By) getExpectedCategories);
         }
 }

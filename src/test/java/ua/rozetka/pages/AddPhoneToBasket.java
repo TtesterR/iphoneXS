@@ -7,7 +7,7 @@ import ua.rozetka.ILocators;
 
 public class AddPhoneToBasket extends PageObject {
 
-    int waitTime = 10000;
+    int waitTime = 5000;
 
     @Step ("the user is on the Rozetka home page")
     public void isTheHomePage(){
@@ -24,7 +24,7 @@ public class AddPhoneToBasket extends PageObject {
         $(ILocators.SEARCH_CLICK).click();
     }
 
-    @Step ("the user changes the color of the phone to Space gray")
+    @Step ("the user choose the phone to Space gray")
     public void clickOnSpaceGray() {
         waitFor(waitTime);
         $(ILocators.CLICK_ON_SPACE_GRAY).click();
