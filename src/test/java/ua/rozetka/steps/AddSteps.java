@@ -6,10 +6,10 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import ua.rozetka.pages.AddPhoneToBasket;
 import ua.rozetka.pages.CheckCategories;
 import java.util.List;
+
 
 public class AddSteps {
 
@@ -59,7 +59,7 @@ public class AddSteps {
         }
 
         @Then("^user should see ad categories$")
-        public void userShouldSeeAdCategories(List<String> getExpectedCategories) {
-                checkCategories.categoriesCheck((By) getExpectedCategories);
+        public void userShouldSeeAdCategories (List<String> getExpectedCategories) {
+            Assert.assertEquals(getExpectedCategories, checkCategories.categoriesCheck());
         }
 }
